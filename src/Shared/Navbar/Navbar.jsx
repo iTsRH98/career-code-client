@@ -20,15 +20,11 @@ const Navbar = () => {
       <li>
         <NavLink to={`/`}>Home</NavLink>
       </li>
-      <li>
-        <NavLink to={`/`}>Home</NavLink>
-      </li>
-      <li>
-        <NavLink to={`/`}>Home</NavLink>
-      </li>
-      <li>
-        <NavLink to={`/`}>Home</NavLink>
-      </li>
+      {user && (
+        <>
+          <NavLink to={`/myApplications`}>My Applications</NavLink>
+        </>
+      )}
     </>
   );
   return (
@@ -70,14 +66,14 @@ const Navbar = () => {
             Sign Out
           </button>
         ) : (
-          <>
+          <div className="flex gap-2">
             <NavLink to={`/register`} className="btn">
               Register
             </NavLink>
             <NavLink to={`/signIn`} className="btn">
               Sign In
             </NavLink>
-          </>
+          </div>
         )}
       </div>
     </div>
